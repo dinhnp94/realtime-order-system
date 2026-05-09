@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: order-api
+  profiles:
+    active: local     # Switch to 'aws' when deploying to AWS
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.orders: DEBUG          # Show all our app logs
+    org.springframework.kafka: INFO

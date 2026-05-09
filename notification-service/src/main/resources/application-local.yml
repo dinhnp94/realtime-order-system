@@ -1,0 +1,19 @@
+# ── notification-service Local Profile ───────────────────────────────────────
+# Lightest service — only needs Kafka, no DB or Redis!
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notifiers           # ← DIFFERENT group from order-processors
+      auto-offset-reset: earliest   # Both groups read ALL messages independently
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.orders.notification_service.dto.OrderEvent
+
+app:
+  kafka:
+    topic:
+      orders: orders

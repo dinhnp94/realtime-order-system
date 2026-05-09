@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: order-consumer
+  profiles:
+    active: local
+
+server:
+  port: 8081     # Different port from order-api (8080)
+
+logging:
+  level:
+    com.orders: DEBUG

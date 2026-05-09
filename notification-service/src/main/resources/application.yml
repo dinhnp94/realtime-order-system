@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: notification-service
+  profiles:
+    active: local
+
+server:
+  port: 8082     # Third service, third port
+
+logging:
+  level:
+    com.orders: DEBUG
