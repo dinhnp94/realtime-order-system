@@ -1,0 +1,27 @@
+# ── Maven build output (can be hundreds of MB — never commit these) ──
+target/
+*.class
+*.jar
+*.war
+
+# ── IDE files ──
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# ── Environment / secrets (NEVER commit passwords to GitHub) ──
+.env.local
+.env
+*.env
+
+# ── OS junk ──
+.DS_Store
+Thumbs.db
+
+# ── Logs ──
+*.log
+logs/
+
+# ── Spring Boot ──
+spring-shell.log
